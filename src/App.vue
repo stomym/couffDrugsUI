@@ -6,6 +6,7 @@
       <PlantHud v-if="showPlant" />
       <DryingRackHud v-if="dryingRack" />
     </div>
+    <Confirm ref="confirm" />
   </v-app>
 </template>
 
@@ -13,6 +14,7 @@
 /* eslint-disable import/no-unresolved */
 /* eslint-disable import/extensions */
 import { mapState, mapActions } from 'vuex';
+import Confirm from '@/components/utils/Confirm';
 import PlantHud from '@/components/PlantHud';
 import DryingRackHud from '@/components/DryingRackHud';
 
@@ -21,6 +23,8 @@ export default {
   created() {
   },
   mounted() {
+    this.$root.$confirm = this.$refs.confirm.open;
+
     window.addEventListener('message', async (event) => {
       const { data } = event;
       switch (data.type) {
@@ -64,7 +68,7 @@ export default {
     }
 
   },
-  components: { PlantHud, DryingRackHud },
+  components: { PlantHud, DryingRackHud, Confirm },
 };
 </script>
 <style scoped>
