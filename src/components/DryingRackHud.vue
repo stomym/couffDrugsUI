@@ -28,7 +28,6 @@
           <v-btn
             elevation="1"
             color="red"
-
             v-text="$t('btn.recoverDryer')"
             @click="recoverDryer"
           />
@@ -47,19 +46,29 @@ export default {
     return {};
   },
   computed: {
-    ...mapState('plants', ['plantInfo']),
+    ...mapState('dryingRack', ['dryingRackInfo']),
     nbSlot() {
       return 10;
     },
+    dryerId() {
+      if (this.dryingRackInfo && 'sqlId' in this.dryingRackInfo) {
+        return this.dryingRackInfo.sqlId;
+      }
+      return 0;
+    },
   },
   methods: {
-    ...mapActions('plants', [
-      'fetchFeedPlant',
-      'fetchPlantInfo',
-      'fetchFillPlant',
-      'fetchDestroyPlant',
-      'fetchHarvestPlant',
+    ...mapActions('dryingRack', [
+      'fetchDryingRackInfo',
+      'recoverDryingRack'
     ]),
+    recoverDryer() {
+      this.recoverDryingRack(this.dryerId).then((res) => {
+        if (res.success) {
+          this.fetchDryingRackInfo(this.dryerId);
+        }
+      });
+    }
   },
   components: { DryingRackItem },
 };
