@@ -88,7 +88,7 @@
             elevation="1"
             color="green"
             text
-            :disabled="isDeath && canHarvest"
+            :disabled="isDeath && !canHarvest"
             v-text="$t('btn.harvest')"
             @click="harvest"
           />
