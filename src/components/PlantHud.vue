@@ -88,7 +88,7 @@
             elevation="1"
             color="green"
             text
-            :disabled="isDeath && !canHarvest"
+            :disabled="isDeath || !canHarvest"
             v-text="$t('btn.harvest')"
             @click="harvest"
           />
@@ -209,10 +209,25 @@ export default {
       });
     },
     destroy() {
-      this.fetchDestroyPlant(this.plantInfo.sqlId);
+      this.$root
+        .$confirm(
+          this.$t('confirm.destroyPlant.title'),
+          this.$t('confirm.destroyPlant.desc'),
+          {
+            color: 'primary',
+            width: '40%'
+          }
+        )
+        .then((confirm) => {
+          if (confirm) {
+            this.fetchDestroyPlant(this.plantInfo.sqlId);
+          }
+        });
     },
     harvest() {
-      this.fetchHarvestPlant(this.plantInfo.sqlId);
+      if (this.canHarvest) {
+        this.fetchHarvestPlant(this.plantInfo.sqlId);
+      }
     }
   },
 };
