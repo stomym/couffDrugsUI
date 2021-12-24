@@ -1,4 +1,10 @@
 {
+  "confirm": {
+    "destroyPlant": {
+      "title": "Détruire pied de weed",
+      "desc": "La destruction entraine la perte totale de la progression et ne donne rien"
+    }
+  },
   "food": "Nourriture",
   "water": "Eau",
   "growth": "Croissance",
@@ -19,6 +25,8 @@
     "feed": "Nourrir",
     "putWater": "Mettre de l'eau",
     "destroy": "Détruire",
-    "recoverDryer": "Récupéré le séchoir"
+    "recoverDryer": "Récupéré le séchoir",
+    "yes": "Oui",
+    "no": "Non"
   }
 }

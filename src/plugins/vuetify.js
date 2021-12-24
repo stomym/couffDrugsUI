@@ -11,6 +11,10 @@ export default new Vuetify({
     options: {
       customProperties: true,
     },
+    themes: {
+      dark: { primary: '#ef6c00' },
+      light: { primary: '#ef6c00' },
+    },
   },
   lang: {
     locales: { fr },

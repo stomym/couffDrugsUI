@@ -44,8 +44,8 @@ export default {
   },
   data() {
     return {
-      dryingRack: true,
-      showPlant: false,
+      dryingRack: false,
+      showPlant: true,
       sqlId: null,
     };
   },

@@ -34,14 +34,14 @@
           text
           @click.native="cancel()"
         >
-          {{ $t("button.no") }}
+          {{ $t("btn.no") }}
         </v-btn>
         <v-btn
           color="primary darken-1"
           text
           @click.native="agree()"
         >
-          {{ $t("button.yes") }}
+          {{ $t("btn.yes") }}
         </v-btn>
       </v-card-actions>
     </v-card>
