@@ -1,0 +1,24 @@
+{
+  "food": "Nourriture",
+  "water": "Eau",
+  "growth": "Croissance",
+  "earthQuality": "Qualité de la terre",
+  "earth": {
+    "excellent": "excellent",
+    "good": "Bon",
+    "medium": "Moyen",
+    "bad": "Mauvais",
+    "veryBad": "Très mauvais"
+  },
+  "info": {
+    "requireForGrowth": "La plante doit avoir minimum 30 de nourriture et d'eau pour pouvoir pousser !",
+    "plantDeath": "Le pied est mort"
+  },
+  "btn": {
+    "harvest": "Récolter",
+    "feed": "Nourrir",
+    "putWater": "Mettre de l'eau",
+    "destroy": "Détruire",
+    "recoverDryer": "Récupéré le séchoir"
+  }
+}
