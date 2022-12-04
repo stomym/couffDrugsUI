@@ -1,4 +1,4 @@
-# victus
+# couffDrugsUI
 
 ## Project setup
 ```
